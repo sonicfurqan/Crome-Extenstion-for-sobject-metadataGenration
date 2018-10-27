@@ -1,0 +1,55 @@
+{
+    "name": "Metadata File for Objects",
+    "version": "1.0",
+    "description": "Download metadafile of fields for any object of salsforce",
+    "author": "Syed Furqan Ahmed",
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage",
+        "cookies",
+        "https://*.force.com/",
+        "proxy",
+        "tabs",
+        "https://*.force.com/*",
+        "https://*.salesforce.com/*"
+    ],
+
+    "background":
+    {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+    {
+        "matches": [
+            "https://*.force.com/*",
+            "https://*.salesforce.com/*"
+        ] ,
+        "css":[
+            "slds.css"
+        ]
+
+    }],
+  
+  
+    "browser_action":
+    {
+        "default_popup": "popup.html",
+        "default_icon":
+        {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+        }
+    },
+    "icons":
+    {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+    },
+    "manifest_version": 2
+}

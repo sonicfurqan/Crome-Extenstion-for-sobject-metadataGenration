@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    .slds-scope{
+      min-width: 250px;
+    }
+    #download{
+     width: 100%; 
+     min-height: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="slds.css">
+    <div class="slds-scope ">
+        <div class="slds-text-heading_medium" id="isLoading"></div>
+        <div class="slds-grid slds-gutters  slds-grid_vertical">
+            <div class="slds-col">
+                <span>
+
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="objPickList">Select Object</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select  class="slds-hide slds-select" id='objPickList'  size="8">
+                        </select>
+                    </div>
+                  </div>
+                </div>
+      
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    <button id="download" class="slds-hide slds-button_brand">Download Metadata File</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
