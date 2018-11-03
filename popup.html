@@ -2,44 +2,128 @@
 <html>
 
 <head>
-  <style type="text/css">
-    .slds-scope{
-      min-width: 250px;
-    }
-    #download{
-     width: 100%; 
-     min-height: 40px;
+    <style type="text/css">
+    .slds-scope {
+        min-width: 350px;
     }
 
-  </style>
+    #download {
+        width: 100%;
+        min-height: 40px;
+    }
+    #compareAndDownload {
+        width: 100%;
+        min-height: 40px;
+    }
+    </style>
 </head>
 
 <body>
+    <script src="jquery.js"></script>
     <link rel="stylesheet" href="slds.css">
-    <div class="slds-scope ">
-        <div class="slds-text-heading_medium" id="isLoading"></div>
-        <div class="slds-grid slds-gutters  slds-grid_vertical">
-            <div class="slds-col">
-                <span>
-
-                <div class="slds-form-element">
-                  <label class="slds-form-element__label" for="objPickList">Select Object</label>
-                    <div class="slds-form-element__control">
-                      <div class="slds-select_container">
-                        <select  class="slds-hide slds-select" id='objPickList'  size="8">
-                        </select>
-                    </div>
-                  </div>
+   <div class="slds-scope ">
+        <div class="slds-tabs_default">
+            <ul class="slds-tabs_default__nav " role="tablist">
+                <li class="slds-tabs_default__item" title="Item One" role="presentation" id="tabCompare__item">
+                    <a class="slds-tabs_default__link" role="tab" tabindex="0" aria-selected="true" aria-controls="tabCompare" >
+                        Compare Org
+                    </a>
+                </li>
+                <li class="slds-tabs_default__item slds-is-active" title="Item Two" role="presentation" id="tabCurrent__item">
+                    <a class="slds-tabs_default__link" role="tab" tabindex="-1" aria-selected="false" aria-controls="tabCurrent" >
+                        Current Org  
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="tabCompare" class="slds-tabs_default__content    slds-hide" role="tabpanel" aria-labelledby="tabCompare__item">
+            <div class="slds-grid slds-gutters  slds-grid_vertical">
+                <div class="slds-col">
+                    <span>
+                        <!--compare org-->
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="orgPickList" id='orgPickListLabel'>
+                                            Select Org</label>
+                                        <div class="slds-form-element__control">
+                                            <div class="slds-select_container">
+                                                <select  class="slds-select" id='orgPickList'  size="1">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col">
+                                <span>
+                                    <!--current org name-->
+                                    <div class="slds-form-element slds-form-element_readonly">
+                                        <span class="slds-form-element__label">Current Org</span>
+                                        <div class="slds-form-element__control">
+                                            <div class="slds-form-element__static" id='currentOrgName'></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
                 </div>
-      
-                </span>
-            </div>
-            <div class="slds-col">
-                <span>
-                    <button id="download" class="slds-hide slds-button_brand">Download Metadata File</button>
-                </span>
+                <div class="slds-col">
+                    <span>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="objPickListCurrent" id='objPickListCurrentLabel'>Select Object</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select  class="slds-select" id='objPickListCurrent'  size="8">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <button id="compareAndDownload" class="slds-button_brand">Download Metadata File</button>
+                    </span>
+                </div>
             </div>
         </div>
+        <div id="tabCurrent" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tabCurrent__item">
+            <!--current org-->
+            <div class="slds-grid slds-gutters  slds-grid_vertical">
+              <div class="slds-col">
+                    <span>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="orgnalOBJList" id='objPickListLabel'>Org Name</label>
+                            <div class="slds-form-element__control">
+                                <div id='curorg'></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="orgnalOBJList" id='objPickListLabel'>Select Object</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select  class="slds-select" id='orgnalOBJList'  size="8">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <button id="download" class="slds-button_brand">Download Metadata File</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-heading_medium" id="isLoading"></div>
     </div>
     <script src="popup.js"></script>
 </body>

@@ -1,7 +1,7 @@
 {
-    "name": "Metadata File for Objects",
+    "name": "Ant Tool XML Genrater",
     "version": "1.0",
-    "description": "Download metadafile of fields for any object of salsforce",
+    "description": "Genrate fields xml of any object",
     "author": "Syed Furqan Ahmed",
     "permissions": [
         "activeTab",
@@ -15,11 +15,6 @@
         "https://*.salesforce.com/*"
     ],
 
-    "background":
-    {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
     "content_scripts": [
     {
         "matches": [
@@ -28,6 +23,9 @@
         ] ,
         "css":[
             "slds.css"
+        ],
+        "js":[
+            "popup.js"
         ]
 
     }],
